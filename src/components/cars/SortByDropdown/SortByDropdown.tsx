@@ -1,5 +1,7 @@
 import React from 'react';
-import {SORT_KEYS, SortLabels, type TSortKey} from '../../types/vendor-avails';
+import {SORT_KEYS, type TSortKey} from '../../../types/vendor-avails';
+import {SortLabels} from '../../../types/constants';
+import {SortByDropdownSC} from './SortByDropdown.styled';
 
 type TDropdownProps = {
   value: TSortKey;
@@ -8,7 +10,7 @@ type TDropdownProps = {
 
 const SortByDropdown: React.FC<TDropdownProps> = ({value, onChange}) => {
   return (
-    <div>
+    <SortByDropdownSC>
       <label>Sort available vehicles by:</label>
       <select value={value} onChange={e => onChange(e.target.value as TSortKey)}>
         {SORT_KEYS.map(option => (
@@ -17,7 +19,7 @@ const SortByDropdown: React.FC<TDropdownProps> = ({value, onChange}) => {
           </option>
         ))}
       </select>
-    </div>
+    </SortByDropdownSC>
   );
 };
 

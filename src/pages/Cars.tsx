@@ -1,9 +1,9 @@
 import {useContext, useMemo, useState} from 'react';
 import {useNavigate} from 'react-router';
-import Car from '../components/cars/Car';
-import {CarSC} from '../components/cars/Car.styled';
-import PickUpReturnInfo from '../components/cars/PickupReturnInfo';
-import SortByDropdown from '../components/cars/SortByDropdown';
+import Car from '../components/cars/Car/Car';
+import {CarSC} from '../components/cars/Car/Car.styled';
+import PickUpReturnInfo from '../components/cars/PickUpReturnInfo/PickUpReturnInfo';
+import SortByDropdown from '../components/cars/SortByDropdown/SortByDropdown';
 import {CarsContext} from '../context/CarsContext';
 import type {TSortKey} from '../types/vendor-avails';
 import {CarsSC} from './Cars.styled';
@@ -24,17 +24,19 @@ const CarsPage = () => {
   );
 
   return (
-    <>
+    <div>
       <PickUpReturnInfo rentalCore={rentalCore} />
-      <SortByDropdown value={sortKey} onChange={setSortKey} />
       <CarsSC>
-        {sortedVehicles.map(car => (
-          <CarSC key={car._id} onClick={() => navigate(`/cars/${car._id}`)}>
-            <Car car={car} />
-          </CarSC>
-        ))}
+        <SortByDropdown value={sortKey} onChange={setSortKey} />
+        <div className='car-list-container'>
+          {sortedVehicles.map(car => (
+            <CarSC key={car._id} onClick={() => navigate(`/cars/${car._id}`)}>
+              <Car car={car} />
+            </CarSC>
+          ))}
+        </div>
       </CarsSC>
-    </>
+    </div>
   );
 };
 

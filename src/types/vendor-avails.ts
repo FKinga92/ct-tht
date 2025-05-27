@@ -32,10 +32,3 @@ export type TVendorAvails = Record<string, TVendorAvail>;
 export const SORT_KEYS = ['price', 'passengerQuantity', 'baggageQuantity', 'doorCount'] as const;
 
 export type TSortKey = (typeof SORT_KEYS)[number];
-
-export const SortLabels: Record<TSortKey, string> = {
-  price: 'Price',
-  passengerQuantity: 'Passenger Quantity',
-  baggageQuantity: 'Baggage Quantity',
-  doorCount: 'Door count',
-};
