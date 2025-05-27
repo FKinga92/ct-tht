@@ -1,18 +1,20 @@
-import type {TVendorAvail} from '../../../types/vendor-avails';
-import {vendorLogos, type TTransmissionTypes, type TVendorName} from './constants';
-import doorIcon from '../../../assets/Icons/door.svg';
+import type {PropsWithChildren} from 'react';
 import bagIcon from '../../../assets/Icons/bag.svg';
+import doorIcon from '../../../assets/Icons/door.svg';
 import fuelIcon from '../../../assets/Icons/fuel.svg';
 import personIcon from '../../../assets/Icons/person.svg';
 import snowflakeIcon from '../../../assets/Icons/snowflake.svg';
 import transmIcon from '../../../assets/Icons/transmission.svg';
+import type {TVendorAvail} from '../../../types/vendor-avails';
+import {vendorLogos, type TTransmissionTypes, type TVendorName} from './constants';
 
-type TCarProps = {car: TVendorAvail};
+type TCarProps = PropsWithChildren<{car: TVendorAvail}>;
 
-const Car = ({car}: TCarProps) => {
+const Car = ({car, children}: TCarProps) => {
   return (
     <>
       <div className='vendor-logo-container'>
+        {children}
         <img className='vendor-logo' src={vendorLogos[car.vendor.name as TVendorName]} alt={car.vendor.name} />
       </div>
       <div className='car-img-container'>

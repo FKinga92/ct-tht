@@ -5,7 +5,7 @@ export const PicUpReturnInfoSC = styled.div`
   flex-wrap: wrap;
   margin-bottom: 1em;
   padding: 1em 1.785em;
-  background-color: #efefef;
+  background-color: var(--grey);
 
   p {
     display: flex;

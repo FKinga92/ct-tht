@@ -1,12 +1,20 @@
 import styled from 'styled-components';
 
 export const CarSC = styled.div`
-  border: 1px solid #c7c7cd;
+  border: 1px solid var(--container);
   border-radius: 0.5em;
   box-shadow: -1px 1px 10px 1px rgba(199, 199, 205, 0.84);
   padding: 0.357em;
   cursor: pointer;
   width: 32%;
+
+  @media only screen and (max-width: 768px) {
+    width: 48%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 
   .car-img-container {
     img {
@@ -59,8 +67,8 @@ export const CarSC = styled.div`
       margin-right: 0.071em;
     }
   }
+
   hr {
-    color: #c7c7cd;
     margin: 0 0.714em;
   }
 `;

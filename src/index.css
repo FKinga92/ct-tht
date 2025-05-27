@@ -1,9 +1,14 @@
 :root {
+  --pimary: #e6356f;
+  --black: #333;
+  --container: #c7c7cd;
+  --grey: #efefef;
+
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
-  color: #333;
+  color: var(--black);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,10 +29,15 @@
   .subtitle-s {
     font-size: 1.125rem;
     line-height: 1.5rem;
+    font-weight: 600;
   }
 
   .body-s {
     font-size: 0.75rem;
     line-height: 1.063rem;
+  }
+
+  hr {
+    color: var(--container);
   }
 }
