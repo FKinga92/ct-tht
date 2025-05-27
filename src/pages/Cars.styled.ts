@@ -1,8 +1,9 @@
-import {styled} from 'styled-components'
+import {styled} from 'styled-components';
 
 export const CarsSC = styled.div`
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-`
+  gap: 15px;
+  justify-content: center;
+`;

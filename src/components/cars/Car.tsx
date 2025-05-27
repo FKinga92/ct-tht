@@ -1,37 +1,30 @@
-import type {TVendorAvail} from '../../types/vendor-avails'
+import type {TVendorAvail} from '../../types/vendor-avails';
 
-type TCarProps = {car: TVendorAvail}
+type TCarProps = {car: TVendorAvail};
 
 const Car = ({car}: TCarProps) => {
-  const {status, vendor, vehicle, totalCharge} = car
-
   return (
     <>
-      <p>Status: {status}</p>
-      <p>Vendor: {vendor.name}</p>
+      <p>Status: {car.status}</p>
+      <p>Vendor: {car.vendor.name}</p>
       <section>
-        <p>Vehicle characheristics:</p>
-        <p>Arconditioned: {vehicle.airConditionInd}</p>
-        <p>Transmission type: {vehicle.transmissionType}</p>
-        <p>Fuel type: {vehicle.fuelType}</p>
-        <p>Drive type: {vehicle.driveType}</p>
-        <p>Passenger quantity: {vehicle.passengerQuantity}</p>
-        <p>Baggage quantity: {vehicle.baggageQuantity}</p>
-        <p>Door count: {vehicle.doorCount}</p>
-        <p>Model name: {vehicle.vehMakeModelName}</p>
-        <img src={vehicle.pictureUrl} alt={`Picture of the ${vehicle.vehMakeModelName}`} />
+        <p>Arconditioned: {car.airConditionInd ? 'yes' : 'no'}</p>
+        <p>Transmission type: {car.transmissionType}</p>
+        <p>Fuel type: {car.fuelType}</p>
+        <p>Drive type: {car.driveType}</p>
+        <p>Passenger quantity: {car.passengerQuantity}</p>
+        <p>Baggage quantity: {car.baggageQuantity}</p>
+        <p>Door count: {car.doorCount}</p>
+        <p>Model name: {car.vehMakeModelName}</p>
+        <img src={car.pictureUrl} alt={car.vehMakeModelName} />
       </section>
       <section>
-        <p>Price: </p>
         <p>
-          Rate Total Amount: {totalCharge.rateTotalAmount} {totalCharge.currencyCode}
-        </p>
-        <p>
-          Estimated Total Amount: {totalCharge.estimatedTotalAmount} {totalCharge.currencyCode}
+          Price: {car.price} {car.currencyCode}
         </p>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Car
+export default Car;
